@@ -1,0 +1,99 @@
+<section id="about" class="section about">
+  <div class="container about-grid">
+
+    <div class="about-visual">
+      <div class="av-wrapper">
+        <div class="av-bg-shape"></div>
+        <div class="av-card">
+          <div class="av-avatar">
+            <img src="image/9580f7fc-3d48-49e8-b5a1-b17b259a590d.jpg" alt="Dipesh Thada" class="av-image">
+          </div>
+          <div class="av-info">
+            <h3>Dipesh Thada</h3>
+            <p>Full-Stack Developer</p>
+          </div>
+          <div class="av-divider"></div>
+          <div class="av-facts">
+            <div class="fact">
+              <span class="fact-icon">📍</span>
+              <span>Strada cuza voda Arad, Romania</span>
+            </div>
+            <div class="fact">
+              <span class="fact-icon">💼</span>
+              <span>Open to Opportunities</span>
+            </div>
+            <div class="fact">
+              <span class="fact-icon">🎓</span>
+              <span>CS Degree — Stanford</span>
+            </div>
+            <div class="fact">
+              <span class="fact-icon">🌐</span>
+              <span>5 languages spoken</span>
+            </div>
+          </div>
+        </div>
+        <div class="av-deco deco-1"></div>
+        <div class="av-deco deco-2"></div>
+      </div>
+    </div>
+
+    <div class="about-content">
+      <span class="section-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>
+        About Me
+      </span>
+      <h2 class="section-title">
+        Passionate about building<br>
+        <span class="gradient-text">great software</span>
+      </h2>
+
+      <div class="about-text">
+        <p>
+          I'm a Full-Stack Developer with over 3 years of experience turning ideas into
+          polished, production-ready products. I specialize in building fast, scalable web
+          applications with a strong focus on user experience and clean code.
+        </p>
+        <p>
+          When I'm not coding, you'll find me exploring new technologies, contributing to
+          open-source projects, or mentoring aspiring developers. I believe the best software
+          comes from empathy — understanding users deeply and building with care.
+        </p>
+      </div>
+
+      <div class="skills-section">
+        <h3 class="skills-heading">Tech Stack</h3>
+        <div class="skill-groups">
+          @for (group of skillGroups; track group.label) {
+          <div class="skill-group">
+            <div class="group-label" [style.color]="group.color">
+              <span class="group-dot" [style.background]="group.color"></span>
+              {{ group.label }}
+            </div>
+            <div class="skill-pills">
+              @for (skill of group.skills; track skill) {
+              <span class="skill-pill" [style.--pill-color]="group.color">{{ skill }}</span>
+              }
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+
+      <div class="about-actions">
+        <a href="#" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+            <polyline points="7,10 12,15 17,10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          Download Resume
+        </a>
+        <a href="#contact" class="btn btn-ghost">Let's Talk</a>
+      </div>
+    </div>
+
+  </div>
+</section>

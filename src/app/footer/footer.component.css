@@ -1,0 +1,149 @@
+.footer {
+  background: #060610;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer-top {
+  padding: 4rem 0 3rem;
+}
+
+.footer-top-inner {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.footer-logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-1);
+  display: inline-block;
+  margin-bottom: 0.85rem;
+}
+
+.logo-lt, .logo-gt {
+  color: var(--purple);
+  font-weight: 300;
+}
+
+.logo-slash {
+  color: var(--blue);
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  color: var(--text-3);
+  max-width: 320px;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.footer-socials a {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-2);
+  transition: all 0.25s ease;
+}
+
+.footer-socials a:hover {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.3);
+  color: var(--purple-light);
+  transform: translateY(-2px);
+}
+
+.footer-nav {
+  display: flex;
+  gap: 3rem;
+}
+
+.footer-col h4 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-1);
+  margin-bottom: 1.25rem;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-col ul li a {
+  font-size: 0.88rem;
+  color: var(--text-3);
+  transition: color 0.25s ease;
+}
+
+.footer-col ul li a:hover {
+  color: var(--purple-light);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1.5rem 0;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.copyright {
+  font-size: 0.83rem;
+  color: var(--text-3);
+}
+
+.heart {
+  color: var(--pink);
+  display: inline-block;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.footer-note {
+  font-size: 0.8rem;
+  color: var(--text-3);
+}
+
+@media (max-width: 768px) {
+  .footer-top-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-nav {
+    gap: 2rem;
+  }
+}
