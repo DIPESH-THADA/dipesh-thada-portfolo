@@ -22,14 +22,23 @@ export class ProjectDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       const id = Number(params.get('id'));
-      this.project = this.projectsService.getById(id);
-      if (!this.project) {
-        this.router.navigate(['/']);
-        return;
-      }
-      this.nextProject = this.projectsService.getNext(id);
-      this.prevProject = this.projectsService.getPrev(id);
-      window.scrollTo({ top: 0, behavior: 'instant' });
+
+      this.projectsService.getById(id).subscribe((project) => {
+        if (!project) {
+          this.router.navigate(['/']);
+          return;
+        }
+        this.project = project;
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      });
+
+      this.projectsService.getNext(id).subscribe((next) => {
+        this.nextProject = next;
+      });
+
+      this.projectsService.getPrev(id).subscribe((prev) => {
+        this.prevProject = prev;
+      });
     });
   }
 }

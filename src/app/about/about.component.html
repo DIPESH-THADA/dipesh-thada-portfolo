@@ -1,12 +1,12 @@
-<section id="about" class="section about">
+<section id="about" class="section about" aria-labelledby="about-heading">
   <div class="container about-grid">
 
-    <div class="about-visual">
+    <div class="about-visual" aria-hidden="true">
       <div class="av-wrapper">
         <div class="av-bg-shape"></div>
         <div class="av-card">
           <div class="av-avatar">
-            <img src="image/9580f7fc-3d48-49e8-b5a1-b17b259a590d.jpg" alt="Dipesh Thada" class="av-image">
+            <img src="image/9580f7fc-3d48-49e8-b5a1-b17b259a590d.jpg" alt="Dipesh Thada — Full-Stack Developer" class="av-image" loading="lazy" width="120" height="120">
           </div>
           <div class="av-info">
             <h3>Dipesh Thada</h3>
@@ -16,7 +16,7 @@
           <div class="av-facts">
             <div class="fact">
               <span class="fact-icon">📍</span>
-              <span>Strada cuza voda Arad, Romania</span>
+              <span>Arad, Romania</span>
             </div>
             <div class="fact">
               <span class="fact-icon">💼</span>
@@ -24,7 +24,7 @@
             </div>
             <div class="fact">
               <span class="fact-icon">🎓</span>
-              <span>CS Degree — Stanford</span>
+              <span>CS Degree</span>
             </div>
             <div class="fact">
               <span class="fact-icon">🌐</span>
@@ -39,13 +39,13 @@
 
     <div class="about-content">
       <span class="section-label">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
           <circle cx="12" cy="7" r="4" />
         </svg>
         About Me
       </span>
-      <h2 class="section-title">
+      <h2 id="about-heading" class="section-title">
         Passionate about building<br>
         <span class="gradient-text">great software</span>
       </h2>
@@ -63,18 +63,29 @@
         </p>
       </div>
 
-      <div class="skills-section">
-        <h3 class="skills-heading">Tech Stack</h3>
+      <div class="skills-section" aria-label="Tech stack and skills">
+        <div class="skills-header">
+          <h3 class="skills-heading">Tech Stack</h3>
+          <div class="skill-legend" aria-label="Proficiency legend">
+            <span class="legend-dot" style="background:#34d399"></span><span class="legend-label">Expert</span>
+            <span class="legend-dot" style="background:#60a5fa"></span><span class="legend-label">Advanced</span>
+            <span class="legend-dot" style="background:#f472b6"></span><span class="legend-label">Intermediate</span>
+          </div>
+        </div>
         <div class="skill-groups">
           @for (group of skillGroups; track group.label) {
           <div class="skill-group">
             <div class="group-label" [style.color]="group.color">
-              <span class="group-dot" [style.background]="group.color"></span>
+              <span class="group-dot" [style.background]="group.color" aria-hidden="true"></span>
               {{ group.label }}
             </div>
-            <div class="skill-pills">
-              @for (skill of group.skills; track skill) {
-              <span class="skill-pill" [style.--pill-color]="group.color">{{ skill }}</span>
+            <div class="skill-pills" role="list" [attr.aria-label]="group.label + ' skills'">
+              @for (skill of group.skills; track skill.name) {
+              <span class="skill-pill" [style.--pill-color]="group.color" role="listitem"
+                [attr.title]="skill.level">
+                {{ skill.name }}
+                <span class="skill-level-dot" [style.background]="levelColor(skill.level)" [attr.aria-label]="skill.level"></span>
+              </span>
               }
             </div>
           </div>
@@ -83,15 +94,17 @@
       </div>
 
       <div class="about-actions">
-        <a href="#" class="btn btn-primary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <!-- Replace the href below with your actual resume URL once uploaded -->
+        <a href="assets/resume/dipesh-thada-resume.pdf" download="Dipesh-Thada-Resume.pdf"
+          class="btn btn-primary" aria-label="Download Dipesh Thada's resume as PDF">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
             <polyline points="7,10 12,15 17,10" />
             <line x1="12" y1="15" x2="12" y2="3" />
           </svg>
           Download Resume
         </a>
-        <a href="#contact" class="btn btn-ghost">Let's Talk</a>
+        <a href="#contact" class="btn btn-ghost" aria-label="Navigate to contact section">Let's Talk</a>
       </div>
     </div>
 

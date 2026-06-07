@@ -16,7 +16,7 @@
   <!-- ── Hero Banner ── -->
   <section class="detail-hero">
     <div class="hero-bg-img">
-      <img [src]="project.image" [alt]="project.title" class="hero-bg-photo" />
+      <img [src]="project.image" [alt]="project.title" class="hero-bg-photo" loading="lazy" />
       <div class="hero-overlay"></div>
     </div>
     <div class="container hero-content">
@@ -111,7 +111,7 @@
 
         <!-- Project Preview Image -->
         <div class="sidebar-card preview-card">
-          <img [src]="project.image" [alt]="project.title" class="preview-img" />
+          <img [src]="project.image" [alt]="project.title + ' preview'" class="preview-img" loading="lazy" />
           <div class="preview-overlay">
             <a [href]="project.liveUrl" target="_blank" rel="noopener" class="preview-cta">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -196,7 +196,7 @@
               Previous Project
             </span>
             <div class="nav-project-info">
-              <img [src]="prevProject.image" [alt]="prevProject.title" class="nav-thumb" />
+              <img [src]="prevProject.image" [alt]="prevProject.title" class="nav-thumb" loading="lazy" />
               <div>
                 <span class="nav-cat">{{ prevProject.category }}</span>
                 <h4 class="nav-project-title">{{ prevProject.title }}</h4>
@@ -216,7 +216,7 @@
                 <span class="nav-cat">{{ nextProject.category }}</span>
                 <h4 class="nav-project-title">{{ nextProject.title }}</h4>
               </div>
-              <img [src]="nextProject.image" [alt]="nextProject.title" class="nav-thumb" />
+              <img [src]="nextProject.image" [alt]="nextProject.title" class="nav-thumb" loading="lazy" />
             </div>
           </a>
         }

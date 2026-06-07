@@ -1,25 +1,40 @@
-<section id="projects" class="section projects">
+<section id="projects" class="section projects" aria-labelledby="projects-heading">
   <div class="container">
     <div class="section-header">
       <span class="section-label">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
         </svg>
         My Work
       </span>
-      <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+      <h2 id="projects-heading" class="section-title">Featured <span class="gradient-text">Projects</span></h2>
       <p class="section-desc">A selection of projects I've built — from full-stack web apps to interactive dashboards.</p>
     </div>
 
-    <div class="projects-grid">
+    <!-- Category Filter -->
+    @if (categories.length > 1) {
+      <div class="filter-bar" role="group" aria-label="Filter projects by category">
+        @for (cat of categories; track cat) {
+          <button
+            class="filter-btn"
+            [class.active]="activeFilter === cat"
+            (click)="setFilter(cat)"
+            [attr.aria-pressed]="activeFilter === cat">
+            {{ cat }}
+          </button>
+        }
+      </div>
+    }
+
+    <div class="projects-grid" role="list">
       @for (project of projects; track project.id) {
-        <article class="project-card" [class.featured]="project.featured" (click)="openProject(project.id)">
+        <article class="project-card" [class.featured]="project.featured" (click)="openProject(project.id)" role="listitem" [attr.aria-label]="project.title">
           <div class="card-thumb">
-            <img class="card-img" [src]="project.image" [alt]="project.title" />
+            <img class="card-img" [src]="project.image" [alt]="project.title" loading="lazy" width="400" height="200" />
             @if (project.featured) {
-              <span class="featured-badge">Featured</span>
+              <span class="featured-badge" aria-label="Featured project">Featured</span>
             }
-            <div class="card-hover-overlay">
+            <div class="card-hover-overlay" aria-hidden="true">
               <span class="view-details-btn">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                 View Details
@@ -33,35 +48,36 @@
 
             <div class="card-meta">
               <span class="card-role">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                   <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
                 </svg>
                 {{ project.role }}
               </span>
+              <span class="card-category-tag">{{ project.category }}</span>
             </div>
 
-            <div class="card-tools">
+            <div class="card-tools" role="list" [attr.aria-label]="project.title + ' technologies'">
               @for (tool of project.tools; track tool) {
-                <span class="tool-tag">{{ tool }}</span>
+                <span class="tool-tag" role="listitem">{{ tool }}</span>
               }
             </div>
           </div>
 
           <div class="card-footer">
-            <a [href]="project.githubUrl" class="card-link" (click)="$event.stopPropagation()" target="_blank" rel="noopener">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <a [href]="project.githubUrl" class="card-link" (click)="$event.stopPropagation()" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'View source code for ' + project.title + ' on GitHub'">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
               </svg>
               Code
             </a>
-            <a [href]="project.liveUrl" class="card-link card-link-primary" (click)="$event.stopPropagation()" target="_blank" rel="noopener">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <a [href]="project.liveUrl" class="card-link card-link-primary" (click)="$event.stopPropagation()" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'View live demo of ' + project.title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/>
               </svg>
               Live Demo
             </a>
-            <button class="card-link card-link-details" (click)="openProject(project.id); $event.stopPropagation()">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <button class="card-link card-link-details" (click)="openProject(project.id); $event.stopPropagation()" [attr.aria-label]="'View details for ' + project.title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
               Details
             </button>
           </div>
@@ -69,9 +85,15 @@
       }
     </div>
 
+    @if (projects.length === 0 && activeFilter !== 'All') {
+      <div class="no-results" role="status">
+        No projects found in this category.
+      </div>
+    }
+
     <div class="projects-cta">
-      <a href="https://github.com/DIPESH-THADA" target="_blank" rel="noopener" class="btn btn-ghost">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <a href="https://github.com/DIPESH-THADA" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" aria-label="View all projects on GitHub">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
         </svg>
         See All Projects on GitHub
