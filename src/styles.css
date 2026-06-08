@@ -66,6 +66,13 @@ img {
 button {
   font-family: 'Inter', sans-serif;
   cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 input, textarea {
@@ -144,6 +151,11 @@ input, textarea {
   box-shadow: 0 8px 32px rgba(139, 92, 246, 0.55);
 }
 
+.btn-primary:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 12px rgba(139, 92, 246, 0.35);
+}
+
 .btn-ghost {
   background: transparent;
   color: var(--text-2);
@@ -155,6 +167,13 @@ input, textarea {
   color: var(--text-1);
   background: var(--bg-card);
   transform: translateY(-2px);
+}
+
+.btn-ghost:active {
+  border-color: var(--border-hover);
+  color: var(--text-1);
+  background: var(--bg-card);
+  transform: translateY(1px);
 }
 
 ::selection {
