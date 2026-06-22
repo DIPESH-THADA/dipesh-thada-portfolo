@@ -359,7 +359,15 @@
     "description": "A responsive Vue book discovery app for searching the Open Library catalog, exploring book details, saving personal reading lists, and tracking reading progress.",
     "fullDescription": "Booknest is a responsive book discovery and reading companion built with Vue 3, TypeScript, Pinia, Vue Router, Bootstrap, and Sass. It connects to the Open Library API so readers can search across millions of catalog records by title, author, subject, or ISBN, browse popular genres, sort results, and open detailed pages with covers, ratings, publication information, availability, descriptions, and related recommendations.\n\nReaders can save books into a persistent personal library, organize them as Want to read, Reading, or Finished, and update their progress directly in the browser. The app also includes a focused preview reader with adjustable font size and paper, sepia, and night themes, plus responsive navigation, light/dark appearance modes, loading skeletons, empty states, API caching, and fallback content when the book service is unavailable.",
     "role": "Frontend Developer",
-    "tools": ["Vue.js", "TypeScript", "Pinia", "Vue Router", "Bootstrap", "Sass", "Vite"],
+    "tools": [
+      "Vue.js",
+      "TypeScript",
+      "Pinia",
+      "Vue Router",
+      "Bootstrap",
+      "Sass",
+      "Vite"
+    ],
     "image": "projects/image/books.jpg",
     "liveUrl": "https://search-bookapp.netlify.app/",
     "githubUrl": "https://github.com/DIPESH-THADA/book-web-app",
@@ -394,6 +402,52 @@
       {
         "label": "Reader Themes",
         "value": "3"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Brothers Fitness",
+    "subtitle": "Premium Gym, Class Booking & Membership Experience",
+    "description": "A premium responsive gym website with training programs, facility galleries, class booking, personal coaching, RON memberships, and interactive fitness tools.",
+    "fullDescription": "Brothers Fitness is a Romanian gym and wellness website built with React 19, Bootstrap 5, Vite, and custom CSS. The experience combines cinematic fitness imagery with a responsive interface designed to guide visitors from discovering the facility to choosing a program, booking a class, comparing memberships, or requesting a free training pass.\n\nThe site includes filterable training programs, a weekday class timetable with booking flows, a six-zone facility gallery, personal coaching information, a BMI calculator, testimonials, FAQs, and three membership tiers priced in Romanian lei. Interactive modals support free-pass requests, member login, class reservations, consultations, and membership selection. A persistent light/dark theme, mobile navigation, Bootstrap responsive grids, accessible controls, and a back-to-top button complete the production-style experience.",
+    "role": "Frontend Developer / UI Designer",
+    "tools": ["React", "Bootstrap", "CSS", "Vite"],
+    "image": "projects/image/fitness.jpg",
+    "liveUrl": "https://brothers-fitgym.netlify.app/",
+    "githubUrl": "https://github.com/DIPESH-THADA/gym-website",
+    "featured": true,
+    "year": "2026",
+    "duration": "1 Month",
+    "category": "Fitness / Wellness",
+    "features": [
+      "Cinematic responsive landing page with original fitness photography",
+      "Filterable Strength, Conditioning, Group, and Personal Coaching programs",
+      "Weekday class schedule with availability and interactive booking modals",
+      "Six-zone gym facility gallery covering cardio, free weights, and strength equipment",
+      "Three membership tiers priced in RON with monthly and annual billing",
+      "Personal coaching consultation and free-pass lead forms",
+      "Interactive BMI calculator with health-range feedback",
+      "Light and dark themes persisted in local browser storage",
+      "Testimonials carousel, accessible FAQ accordion, and member login flow",
+      "Bootstrap responsive grids, mobile navigation, and back-to-top control"
+    ],
+    "highlights": [
+      {
+        "label": "Weekly Classes",
+        "value": "85"
+      },
+      {
+        "label": "Memberships",
+        "value": "3 RON Plans"
+      },
+      {
+        "label": "Training Zones",
+        "value": "6"
+      },
+      {
+        "label": "Framework",
+        "value": "React 19"
       }
     ]
   }
