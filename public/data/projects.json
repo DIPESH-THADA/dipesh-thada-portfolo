@@ -450,5 +450,51 @@
         "value": "React 19"
       }
     ]
+  },
+  {
+    "id": 11,
+    "title": "Beauty Product Ecommerce Website",
+    "subtitle": "Yves Rocher Inspired Animated Beauty Storefront",
+    "description": "A dark, animated beauty ecommerce experience with an Yves Rocher inspired landing page, full product catalog, product details, favorites, login, cart, and checkout flow.",
+    "fullDescription": "Beauty Product Ecommerce Website is a React 19 and TypeScript storefront inspired by Yves Rocher botanical beauty products. The project combines a cinematic animated landing page with a separate ecommerce shop experience, giving visitors a polished first impression before moving into a practical shopping flow.\n\nThe ecommerce side includes a 209-product catalog, product search and filtering, sorting, product detail pages, stable product ratings, favorite products, add-to-cart confirmations, login page, cart management, and checkout UI. The interface uses a dark premium visual direction, responsive layouts, reusable components, separated CSS files, icon-based navigation, and Vite for a fast modern development workflow.",
+    "role": "Frontend Developer / UI Designer",
+    "tools": ["React", "TypeScript", "CSS", "Vite"],
+    "image": "projects/image/beauty-image.webp",
+    "liveUrl": "https://beauty-product-ecommerce-landing.netlify.app/",
+    "githubUrl": "https://github.com/DIPESH-THADA/beauty-product-ecommerce-website",
+    "featured": true,
+    "year": "2026",
+    "duration": "1 Month",
+    "category": "Beauty / E-Commerce",
+    "features": [
+      "Animated dark landing page with hero product spotlight and botanical storytelling",
+      "Separate ecommerce pages for products, details, favorites, login, cart, and checkout",
+      "209 Yves Rocher catalog products with search, category filtering, and sorting",
+      "Product detail pages with pricing, tags, stock state, and stable rating display",
+      "Favorites system with icon controls and confirmation toast messages",
+      "Cart management with quantity controls, subtotal, shipping, tax, and order confirmation",
+      "Dedicated login page with demo account state for checkout",
+      "Responsive premium UI with separated React components and CSS files",
+      "Dark/light landing theme toggle and icon-based ecommerce navigation",
+      "Vite production build with TypeScript and Oxlint checks"
+    ],
+    "highlights": [
+      {
+        "label": "Products",
+        "value": "209"
+      },
+      {
+        "label": "Pages",
+        "value": "6 Shop Views"
+      },
+      {
+        "label": "Brand Theme",
+        "value": "Yves Rocher"
+      },
+      {
+        "label": "Framework",
+        "value": "React 19"
+      }
+    ]
   }
 ]
